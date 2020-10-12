@@ -31,11 +31,10 @@ section .text
       mov  ecx, esp     ; Get the address of argv[]
    
       ; For environment variable 
-      ;xor  edx, edx     ; No env variables 
-	push esi
-	push edx
-	push edi
-	mov edx, esp
+	push esi	; cccc=1234
+	push edx	; bbb=5678
+	push edi	; aaa=1234
+	mov edx, esp	; get the address of environment variables
 
       ; Invoke execve()
       xor  eax, eax     ; eax = 0x00000000
